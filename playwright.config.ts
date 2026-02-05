@@ -1,6 +1,10 @@
 import { defineConfig, devices } from "playwright/test";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 export default defineConfig({
+
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -10,6 +14,8 @@ export default defineConfig({
 
   reporter: 'html',
   use: {
+    baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
+    screenshot: 'only-on-failure',
     trace: 'on-first-retry',
   },
 
