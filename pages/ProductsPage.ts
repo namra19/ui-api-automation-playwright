@@ -12,4 +12,17 @@ export class ProductsPage {
     async goToCart() {
         await this.page.click(productsLocators.cartIcon);
     }
+
+    async sortBy(option: string) {
+        await this.page.selectOption(
+            productsLocators.sortDropdown,
+            option
+        );
+    }
+
+    async getItemNames(): Promise<string[]> {
+        return await this.page
+            .locator(productsLocators.productItemNames)
+            .allTextContents();
+    }
 }
