@@ -14,4 +14,14 @@ export class ApiBase {
     async validateStatus(response: APIResponse, status: number) {
         expect(response.status()).toBe(status);
     }
+    async getSafeBody(response: any) {
+        const contentType = response.headers()['content-type'] || '';
+
+        if (contentType.includes('application/json')) {
+            return response.json();
+        }
+
+        return response.text();
+    }
+
 }

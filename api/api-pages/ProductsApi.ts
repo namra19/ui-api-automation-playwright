@@ -30,4 +30,9 @@ export class ProductsApi extends ApiBase {
 
         return body;
     }
+
+    async getProductByInvalidId(productId: number) {
+        return await this.request.get(`/products/${productId}`);
+    }
+
 }
