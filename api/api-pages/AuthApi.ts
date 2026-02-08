@@ -24,4 +24,14 @@ export class AuthApi extends ApiBase {
 
         return body.token;
     }
+
+    async loginWithInvalidCredentials(username: string, password: string) {
+        return await this.request.post('/auth/login', {
+            data: {
+                username,
+                password,
+            },
+        });
+    }
+
 }
