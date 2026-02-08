@@ -35,7 +35,7 @@ The framework follows Page Object Model (POM) principles and supports:
 └── README.md
 ```
 
-## Tech Stack 
+# Tech Stack 
 * Playwright
 
 * TypeScript
@@ -46,7 +46,7 @@ The framework follows Page Object Model (POM) principles and supports:
 
 * Dotenv (environment configuration)
 
-## Applications Under Test 
+# Applications Under Test 
 * UI Application - SauceDemo
 
 URL: https://www.saucedemo.com
@@ -55,8 +55,8 @@ URL: https://www.saucedemo.com
 
 Base URL: https://fakestoreapi.com
 
-## Environment Setup 
-# Prerequisites
+# Environment Setup 
+## Prerequisites
 
 * Make sure you have:
 
@@ -72,7 +72,7 @@ Create a .env file in the root directory:
 BASE_URL=https://www.saucedemo.com
 API_BASE_URL=https://fakestoreapi.com
 
-## Running Tests 
+# Running Tests 
 * Run all tests (UI + API): npx playwright test
 
 * Run only UI tests: npx playwright test --project=ui-tests
@@ -80,7 +80,7 @@ API_BASE_URL=https://fakestoreapi.com
 * Run only API tests: npx playwright test --project=api-tests
 
 
-## UI Test Architecture 
+# UI Test Architecture 
 
 * UI tests use Page Object Model
 
@@ -88,7 +88,7 @@ API_BASE_URL=https://fakestoreapi.com
 
 * Test files interact only with page methods (no selectors in tests)
 
-## API Test Architecture 
+# API Test Architecture 
 
 * API tests use Playwright’s APIRequestContext
 
@@ -96,7 +96,7 @@ API_BASE_URL=https://fakestoreapi.com
 
 * Shared logic lives in ApiBase
 
-## Test Reports 
+# Test Reports 
 
 After execution, Playwright generates an HTML report.
 
