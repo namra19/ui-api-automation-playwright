@@ -20,4 +20,21 @@ test.describe('SauceDemo Login', () => {
         await expect(page).toHaveURL(/inventory.html/);
     });
 
+    test('Login with invalid credentials', async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.goto();
+
+        await loginPage.login(
+            users.invalidUser.username,
+            users.invalidUser.password
+        );
+
+        const errorMessage = await loginPage.getErrorMessage();
+
+        expect(errorMessage).toBe('Epic sadface: Username and password do not match any user in this service')
+    });
+
 });
+
+
+
