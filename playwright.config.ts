@@ -1,10 +1,9 @@
-import { defineConfig, devices } from "playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 export default defineConfig({
-
   testDir: './tests',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
@@ -13,16 +12,25 @@ export default defineConfig({
   ...(process.env.CI ? { workers: 1 } : {}),
 
   reporter: 'html',
-  use: {
-    baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
-    screenshot: 'only-on-failure',
-    trace: 'on-first-retry',
-  },
 
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'ui-tests',
+      testDir: 'tests/ui-tests',
+      use: {
+        ...devices['Desktop Chrome'],
+        baseURL: process.env.BASE_URL || 'https://www.saucedemo.com',
+        screenshot: 'only-on-failure',
+        trace: 'on-first-retry',
+      },
+    },
+
+    {
+      name: 'api-tests',
+      testDir: 'tests/api-tests',
+      use: {
+        baseURL: process.env.API_BASE_URL || 'https://fakestoreapi.com',
+      },
     },
   ],
 });
