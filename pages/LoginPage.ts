@@ -14,7 +14,9 @@ export class LoginPage {
         await this.page.click(loginLocators.loginButton);
     }
 
-    get errorMessage() {
-        return this.page.locator(loginLocators.errorMessage);
+    async getErrorMessage(): Promise<string> {
+        return await this.page
+            .locator(loginLocators.errorMessage)
+            .innerText();
     }
 }
