@@ -47,29 +47,24 @@ The framework follows Page Object Model (POM) principles and supports:
 * Dotenv (environment configuration)
 
 ## Applications Under Test 
-* UI Application
-
-SauceDemo
+* UI Application - SauceDemo
 
 URL: https://www.saucedemo.com
 
-* API Application
-
-FakeStore API
+* API Application - FakeStore API
 
 Base URL: https://fakestoreapi.com
 
 ## Environment Setup 
-* Prerequisites
+# Prerequisites
 
-Make sure you have:
+* Make sure you have:
 
-Node.js (v18+ recommended)
+* Node.js (v18+ recommended)
 
-npm
+* npm
 
-* Install dependencies
-npm install
+* Install dependencies: npm install
 
 ## Environment variables 
 Create a .env file in the root directory:
@@ -78,17 +73,11 @@ BASE_URL=https://www.saucedemo.com
 API_BASE_URL=https://fakestoreapi.com
 
 ## Running Tests 
-* Run all tests (UI + API) 
+* Run all tests (UI + API): npx playwright test
 
-npx playwright test
+* Run only UI tests: npx playwright test --project=ui-tests
 
-* Run only UI tests
-
-npx playwright test --project=ui-tests
-
-* Run only API tests
-
-npx playwright test --project=api-tests
+* Run only API tests: npx playwright test --project=api-tests
 
 
 ## UI Test Architecture 
@@ -111,6 +100,4 @@ npx playwright test --project=api-tests
 
 After execution, Playwright generates an HTML report.
 
-To view it:
-
-npx playwright show-report
+To view it: npx playwright show-report
