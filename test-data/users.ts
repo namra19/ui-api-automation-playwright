@@ -6,6 +6,8 @@ const usersByEnv: Record<TestEnv, {
     standardUser: { username: string; password: string };
     lockedOutUser: { username: string; password: string };
     invalidUser: { username: string; password: string };
+    validAPIUser: { username: string; password: string };
+
 }> = {
     qa: {
         standardUser: {
@@ -19,6 +21,10 @@ const usersByEnv: Record<TestEnv, {
         invalidUser: {
             username: 'invalid_user',
             password: 'wrong_password',
+        },
+        validAPIUser: {
+            username: 'mor_2314',
+            password: '83r5^_',
         },
 
     },
@@ -34,6 +40,10 @@ const usersByEnv: Record<TestEnv, {
         invalidUser: {
             username: 'invalid_user',
             password: 'wrong_password',
+        },
+        validAPIUser: {
+            username: 'mor_2314',
+            password: '83r5^_',
         },
     }
 
